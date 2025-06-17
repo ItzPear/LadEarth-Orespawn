@@ -27,7 +27,7 @@ public class UltimateArrow extends EntityArrow
     private int ticksInGround;
     private int ticksInAir;
     private int knockbackStrength;
-    
+
     public UltimateArrow(final World par1World) {
         super(par1World);
         this.xTile = -1;
@@ -38,7 +38,7 @@ public class UltimateArrow extends EntityArrow
         this.inGround = false;
         this.ticksInAir = 0;
     }
-    
+
     public UltimateArrow(final World par1World, final double par2, final double par4, final double par6) {
         super(par1World, par2, par4, par6);
         this.xTile = -1;
@@ -49,7 +49,7 @@ public class UltimateArrow extends EntityArrow
         this.inGround = false;
         this.ticksInAir = 0;
     }
-    
+
     public UltimateArrow(final World par1World, final EntityLiving par2EntityLiving, final EntityLivingBase par3EntityLiving, final float par4, final float par5) {
         super(par1World, (EntityLivingBase)par2EntityLiving, par3EntityLiving, par4, par5);
         this.xTile = -1;
@@ -60,7 +60,7 @@ public class UltimateArrow extends EntityArrow
         this.inGround = false;
         this.ticksInAir = 0;
     }
-    
+
     public UltimateArrow(final World par1World, final EntityPlayer par3EntityPlayer, final float par3) {
         super(par1World, (EntityLivingBase)par3EntityPlayer, par3);
         this.xTile = -1;
@@ -71,12 +71,12 @@ public class UltimateArrow extends EntityArrow
         this.inGround = false;
         this.ticksInAir = 0;
     }
-    
+
     protected void entityInit() {
         super.entityInit();
-        this.dataWatcher.addObject(16, (Object)0);
+        this.dataWatcher.addObject(20, (Object)0);
     }
-    
+
     public void setThrowableHeading(double par1, double par3, double par5, final float par7, final float par8) {
         final float var9 = MathHelper.sqrt_double(par1 * par1 + par3 * par3 + par5 * par5);
         par1 /= var9;
@@ -97,7 +97,7 @@ public class UltimateArrow extends EntityArrow
         this.prevRotationPitch = n2;
         this.ticksInGround = 0;
     }
-    
+
     public void onUpdate() {
         super.onEntityUpdate();
         if (this.prevRotationPitch == 0.0f && this.prevRotationYaw == 0.0f) {
@@ -314,14 +314,14 @@ public class UltimateArrow extends EntityArrow
             this.func_145775_I();
         }
     }
-    
+
     public void setKnockbackStrength(final int par1) {
         this.knockbackStrength = par1;
     }
-    
+
     public void setDamage(final double par1) {
     }
-    
+
     public double getDamage() {
         return OreSpawnMain.UltimateBowDamage;
     }
