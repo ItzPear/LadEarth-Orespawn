@@ -73,6 +73,7 @@ public class IrukandjiArrow extends EntityArrow
     }
     
     protected void entityInit() {
+        super.entityInit();
         this.dataWatcher.addObject(16, (Object)0);
     }
     
