@@ -41,7 +41,7 @@ public class UltimateBow extends Item
     
     public void onPlayerStoppedUsing(final ItemStack par1ItemStack, final World par2World, final EntityPlayer par3EntityPlayer, final int par4) {
         final EntityArrow var8 = (EntityArrow)new UltimateArrow(par2World, par3EntityPlayer, 3.0f);
-        if (par2World.rand.nextInt(4) == 1) {
+        if (par2World.rand.nextByte(4) == 1) {
             var8.setIsCritical(true);
         }
         final int var9 = EnchantmentHelper.getEnchantmentLevel(Enchantment.punch.effectId, par1ItemStack);
