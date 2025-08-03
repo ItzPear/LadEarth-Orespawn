@@ -1,5 +1,4 @@
 //Deobfuscated with https://github.com/SimplyProgrammer/Minecraft-Deobfuscator3000 using mappings "/home/rhel/Descargas/1.7.10mappings"!
-
 //Decompiled by Procyon!
 
 package danger.orespawn;
@@ -63,27 +62,30 @@ public class IceBall extends LaserBall
             this.setDead();
             return;
         }
+
         super.onImpact(par1MovingObjectPosition);
+
         if (this.icemaker != 0) {
             for (int i = 0; i < 5; ++i) {
                 int x = this.worldObj.rand.nextInt(4);
-                if (this.worldObj.rand.nextInt(2) == 1) {
-                    x = -x;
-                }
+                if (this.worldObj.rand.nextInt(2) == 1) x = -x;
+
                 int y = this.worldObj.rand.nextInt(4);
-                if (this.worldObj.rand.nextInt(2) == 1) {
-                    y = -y;
-                }
+                if (this.worldObj.rand.nextInt(2) == 1) y = -y;
+
                 int z = this.worldObj.rand.nextInt(4);
-                if (this.worldObj.rand.nextInt(2) == 1) {
-                    z = -z;
-                }
+                if (this.worldObj.rand.nextInt(2) == 1) z = -z;
+
                 x += (int)par1MovingObjectPosition.hitVec.xCoord;
                 y += (int)par1MovingObjectPosition.hitVec.yCoord;
                 z += (int)par1MovingObjectPosition.hitVec.zCoord;
-                this.worldObj.setBlock(x, y, z, OreSpawnMain.PrinceIce);
+
+                if (this.worldObj.isAirBlock(x, y, z)) {
+                    this.worldObj.setBlock(x, y, z, OreSpawnMain.PrinceIce);
+                }
             }
         }
+
         this.setDead();
     }
 }
